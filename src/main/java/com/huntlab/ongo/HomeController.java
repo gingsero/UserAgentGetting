@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.pieroxy.ua.detection.Bot;
+import net.pieroxy.ua.detection.OS;
+import net.pieroxy.ua.detection.UserAgentDetector;
+
+
 /**
  * Handles requests for the application home page.
  */
@@ -41,17 +46,34 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/index")
-	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
+	public ModelAndView index(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info("requestUserAgent()");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
+		return mav;
+	}
+	
+	@RequestMapping("/get/useragent")
+	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
+		ModelAndView mav = new ModelAndView();
+		
+		// User Agent detector Lib 추가 - O
+		
+		// User Agent Class에서 추출
+//		UserAgentDetector userAgent = new UserAgentDetector();
+//		userAgent.parseUserAgent("OS");
+//		System.out.println(userAgent.VERSION);
 		
 		
 		
 		
+		// Vo 객체 추가
+		
+		// Vo 객체에 담기
+		
+		// Attribute에 vo 객체 담기
 		
 		
 		return mav;
 	}
-	
 }
