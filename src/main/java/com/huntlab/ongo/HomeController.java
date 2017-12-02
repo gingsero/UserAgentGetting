@@ -31,7 +31,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "home.do", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -45,22 +45,25 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping("/index")
-	public ModelAndView index(HttpServletRequest req, HttpServletResponse resp) {
+	@RequestMapping("index.do")
+	public String index(HttpServletRequest req, HttpServletResponse resp) {
 		logger.info("requestUserAgent()");
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("index");
-		return mav;
+		return "index";
 	}
 	
-	@RequestMapping("/get/useragent")
+	@RequestMapping("get/useragent")
 	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
 		ModelAndView mav = new ModelAndView();
 		
 		// User Agent detector Lib 추가 - O
 		
 		// User Agent Class에서 추출
-//		UserAgentDetector userAgent = new UserAgentDetector();
+		UserAgentDetector detector = new UserAgentDetector();
+		
+		// session header 를 String으로 담아서 처리해줘야 할 필요 있음.
+		
+		
+		
 //		userAgent.parseUserAgent("OS");
 //		System.out.println(userAgent.VERSION);
 		
