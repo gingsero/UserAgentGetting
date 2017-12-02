@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.pieroxy.ua.detection.Bot;
-import net.pieroxy.ua.detection.OS;
-import net.pieroxy.ua.detection.UserAgentDetector;
-
+import net.pieroxy.ua.detection.*;
 
 /**
  * Handles requests for the application home page.
@@ -55,11 +52,18 @@ public class HomeController {
 	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
 		ModelAndView mav = new ModelAndView();
 		
+		String userAgent = req.getHeader("user-agent");
+		String userFrom = req.getHeader("from");
+		System.out.println("User Info : " + userAgent);
+		System.out.println("User Info : " + userFrom);
+		
 		// User Agent detector Lib 추가 - O
 		
 		// User Agent Class에서 추출
 		UserAgentDetector detector = new UserAgentDetector();
+		detector.test();
 		
+		System.out.println("detector Version : " + detector.VERSION);
 		// session header 를 String으로 담아서 처리해줘야 할 필요 있음.
 		
 		
