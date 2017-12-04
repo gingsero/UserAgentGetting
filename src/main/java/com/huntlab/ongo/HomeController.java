@@ -44,12 +44,13 @@ public class HomeController {
 	
 	@RequestMapping("index.do")
 	public String index(HttpServletRequest req, HttpServletResponse resp) {
-		logger.info("requestUserAgent()");
+		logger.info("index()");
 		return "index";
 	}
 	
 	@RequestMapping("get/useragent.do")
 	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
+		logger.info("requsetUserAgent()");
 		ModelAndView mav = new ModelAndView();
 		
 		String userAgent = req.getHeader("user-agent");
