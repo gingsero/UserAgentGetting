@@ -48,7 +48,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping("get/useragent")
+	@RequestMapping("get/useragent.do")
 	public ModelAndView requsetUserAgent(HttpServletRequest req, HttpServletResponse resp) {
 		ModelAndView mav = new ModelAndView();
 		
