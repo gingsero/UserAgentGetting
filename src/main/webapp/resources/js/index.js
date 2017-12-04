@@ -17,7 +17,7 @@ function executeGetting(){
 	console.log("executeGetting()");
 	$.ajax({
 		type:"GET",
-		url:"/get/useragent",
+		url:"/get/useragent.do",
 		success: function(){
 			
 		},
