@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	
-	<script src="resources/js/jquery-3.2.0.js"></script>
+	<script src="resources/common/js/jquery-3.2.0.js"></script>
 	<script src="resources/js/index.js"></script>
 </body>
 </html>
