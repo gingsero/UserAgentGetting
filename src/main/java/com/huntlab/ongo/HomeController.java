@@ -58,13 +58,15 @@ public class HomeController {
 		System.out.println("User Info : " + userAgent);
 		System.out.println("User Info : " + userFrom);
 		
+		// browser 객체 추가
+		Browser browser = new Browser(null, null, userFrom, null);
+		System.out.println(browser.getFullVersion());
+		
 		// User Agent detector Lib 추가 - O
 		
 		// User Agent Class에서 추출
-		UserAgentDetector detector = new UserAgentDetector();
-		detector.test();
 		
-		System.out.println("detector Version : " + detector.VERSION);
+		
 		// session header 를 String으로 담아서 처리해줘야 할 필요 있음.
 		
 		
